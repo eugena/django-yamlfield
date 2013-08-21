@@ -4,14 +4,13 @@ import yaml
 
 from django.core.serializers.pyyaml import DjangoSafeDumper
 from django.forms import fields, util
-from django.utils.translation import ugettext as _
 
 class YAMLFormField(fields.Field):
     """
     YAML Form field
     """
     default_error_messages = {
-        'invalid': _(u'Invalid YAML format'), }
+        'invalid': u'Invalid YAML format', }
 
     def clean(self, value):
         """
